@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #f7e9dd;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        pre {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: left;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffdfa0;
+            margin-bottom: 20px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        input {
+            width: 80%;
+            padding: 12px;
+            margin: 20px 0;
+            border: 2px solid #fff;
+            border-radius: 30px;
+            outline: none;
+            font-size: 1.1rem;
+            color: #333;
+            background: #fff;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #ffdfa0;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #4e4376;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: #2b5876;
+            transform: scale(1.05);
+        }
+
+        .output {
+            margin-top: 20px;
+            font-size: 1.3rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+
+        .output span {
+            font-weight: bold;
+            color: #ffdfa0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Palindrome Checker</h1>
+        <pre><strong>#Python Code</strong>
+num = int(input("Enter a number: "))
+
+temp = num
+
+reverse = 0
+
+while num > 0:
+    digit = num % 10
+    reverse = reverse * 10 + digit
+    num //= 10
+
+if temp == reverse:
+    print(temp, "is a palindrome")
+else:
+    print(temp, "is not a palindrome")
+        </pre>
+
+        <input type="number" id="numberInput" placeholder="Enter a number...">
+        <button onclick="checkPalindrome()">Check Palindrome</button>
+
+        <div class="output" id="output">Output will appear here...</div>
+    </div>
+
+    <script>
+        function checkPalindrome() {
+            let num = parseInt(document.getElementById('numberInput').value);
+            const output = document.getElementById('output');
+
+            if (isNaN(num) || num < 0) {
+                output.innerHTML = 'Please <span>enter a valid positive number</span>.';
+                return;
+            }
+
+            const temp = num;
+            let reverse = 0;
+
+            while (num > 0) {
+                const digit = num % 10;
+                reverse = reverse * 10 + digit;
+                num = Math.floor(num / 10);
+            }
+
+            if (temp === reverse) {
+                output.innerHTML = `<span>${temp}</span> is a palindrome.`;
+            } else {
+                output.innerHTML = `<span>${temp}</span> is not a palindrome.`;
+            }
+        }
+    </script>
+</body>
+</html>

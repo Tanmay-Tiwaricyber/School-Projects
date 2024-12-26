@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MySQL Insert Query</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 30px;
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #f7e9dd;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    pre {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: left;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      font-family: 'Courier New', Courier, monospace;
+      color: #ffdfa0;
+      margin-bottom: 20px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .content {
+      margin: 20px 0;
+      text-align: left;
+      line-height: 1.8;
+    }
+
+    .content h3 {
+      color: #f7e9dd;
+      margin-bottom: 10px;
+    }
+
+    .content p, .content ol {
+      color: #e0e0e0;
+    }
+
+    .content ol {
+      padding-left: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      background: #2a5298;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      background: #1e3c72;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>MySQL Insert Query</h1>
+    <pre><code>import mysql.connector
+
+# Establish connection to MySQL
+mydb = mysql.connector.connect(host="localhost", user="root", password="root", database="school")
+
+mycursor = mydb.cursor()
+
+sql = "INSERT into students(name, age) VALUES (%s, %s)"
+val = ("Abhay", 20)
+
+mycursor.execute(sql, val)
+mydb.commit()
+
+print("Data Inserted")</code></pre>
+    <div class="content">
+      <h3>Explanation:</h3>
+      <ol>
+        <li>Import the <strong>mysql.connector</strong> module to interact with the MySQL server.</li>
+        <li>Establish a connection using <code>mysql.connector.connect()</code> by providing the host, username, and password.</li>
+        <li>Create a cursor object to execute SQL queries.</li>
+        <li>Define the SQL <strong>INSERT</strong> query: <code>INSERT INTO students(name, age) VALUES (%s, %s)</code>.</li>
+        <li>Provide the values to insert into the table, e.g., <code>("Abhay", 20)</code>.</li>
+        <li>Execute the query using <code>mycursor.execute()</code> and pass the query and values as parameters.</li>
+        <li>Commit the changes using <code>mydb.commit()</code> to save the data into the database.</li>
+        <li>Print a success message to confirm the insertion.</li>
+      </ol>
+      <h3>Key Points:</h3>
+      <ul>
+        <li><strong>mydb.commit()</strong>: Ensures that the transaction is saved to the database.</li>
+        <li>Use parameterized queries (<code>%s</code>) to prevent SQL injection.</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python & MySQL Database Creation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 30px;
+      width: 100%;
+      max-width: 700px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #f7e9dd;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    pre {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: left;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      font-family: 'Courier New', Courier, monospace;
+      color: #ffdfa0;
+      margin-bottom: 20px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .content {
+      margin: 20px 0;
+      text-align: left;
+      line-height: 1.8;
+    }
+
+    .content h3 {
+      color: #f7e9dd;
+      margin-bottom: 10px;
+    }
+
+    .content p, .content ol {
+      color: #e0e0e0;
+    }
+
+    .content ol {
+      padding-left: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      background: #2a5298;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      background: #1e3c72;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Python & MySQL Database Creation</h1>
+    <pre><code>
+import mysql.connector
+
+# Establish connection to MySQL
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="root"
+)
+
+mycursor = mydb.cursor()
+
+# Create database if it doesn't already exist
+mycursor.execute("CREATE DATABASE IF NOT EXISTS JNVM_SCHOOL")
+print("Database 'JNVM_SCHOOL' created successfully!")
+    </code></pre>
+    <div class="content">
+      <h3>Explanation:</h3>
+      <ol>
+        <li><strong>Import mysql.connector:</strong> This module allows Python to interact with MySQL databases.</li>
+        <li><strong>Connect to MySQL:</strong> Use <code>mysql.connector.connect</code> to establish a connection to the MySQL server.</li>
+        <li><strong>Create Cursor:</strong> A cursor is used to execute SQL queries.</li>
+        <li><strong>Execute Query:</strong> The SQL query <code>CREATE DATABASE IF NOT EXISTS JNVM_SCHOOL</code> creates the database if it doesn't already exist.</li>
+        <li><strong>Print Confirmation:</strong> Displays a success message once the database is created.</li>
+      </ol>
+      <h3>Example:</h3>
+      <pre><code>
+# Running the script will create the 'JNVM_SCHOOL' database
+Database 'JNVM_SCHOOL' created successfully!
+      </code></pre>
+      <h3>Note:</h3>
+      <p>Ensure MySQL is running on your system, and replace <code>host</code>, <code>user</code>, and <code>password</code> with your MySQL server credentials.</p>
+    </div>
+  </div>
+</body>
+</html>

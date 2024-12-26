@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number Checker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #f7e9dd;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        pre {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: left;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffdfa0;
+            margin-bottom: 20px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        input {
+            width: 80%;
+            padding: 12px;
+            margin: 20px 0;
+            border: 2px solid #fff;
+            border-radius: 30px;
+            outline: none;
+            font-size: 1.1rem;
+            color: #333;
+            background: #fff;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #ffdfa0;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #4e4376;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: #2b5876;
+            transform: scale(1.05);
+        }
+
+        .output {
+            margin-top: 20px;
+            font-size: 1.3rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+
+        .output span {
+            font-weight: bold;
+            color: #ffdfa0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prime Number Checker</h1>
+        <pre><strong>#Python Code</strong>
+num = int(input("Enter a Number: "))
+
+if num > 1:
+
+    for i in range(2, num):
+
+        if (num % i) == 0:
+
+            print(num, "is not a prime number")
+
+            break
+
+    else:
+
+        print(num, "is a prime number")
+
+else:
+
+    print(num, "is not a prime number")
+        </pre>
+
+        <input type="number" id="numberInput" placeholder="Enter a number...">
+        <button onclick="checkPrime()">Run</button>
+
+        <div class="output" id="output">Output will appear here...</div>
+    </div>
+
+    <script>
+        function checkPrime() {
+            const num = parseInt(document.getElementById('numberInput').value);
+            const output = document.getElementById('output');
+
+            if (isNaN(num)) {
+                output.innerHTML = 'Please <span>enter a valid number</span>.';
+                return;
+            }
+
+            if (num <= 1) {
+                output.innerHTML = `<span>${num}</span> is not a prime number.`;
+                return;
+            }
+
+            let isPrime = true;
+
+            for (let i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                output.innerHTML = `<span>${num}</span> is a prime number.`;
+            } else {
+                output.innerHTML = `<span>${num}</span> is not a prime number.`;
+            }
+        }
+    </script>
+    <!-- coded by Tanmay Tiwari -->
+    <!-- Class - 12th B -->
+    <!-- Roll No.: 12440 -->
+</body>
+</html>

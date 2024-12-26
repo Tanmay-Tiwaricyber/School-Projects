@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MySQL Create Table Notes</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 30px;
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #f7e9dd;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    pre {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: left;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      font-family: 'Courier New', Courier, monospace;
+      color: #ffdfa0;
+      margin-bottom: 20px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .content {
+      margin: 20px 0;
+      text-align: left;
+      line-height: 1.8;
+    }
+
+    .content h3 {
+      color: #f7e9dd;
+      margin-bottom: 10px;
+    }
+
+    .content p, .content ol {
+      color: #e0e0e0;
+    }
+
+    .content ol {
+      padding-left: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      background: #2a5298;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      background: #1e3c72;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>MySQL Create Table Notes</h1>
+    <pre><code>import mysql.connector
+
+# Establish connection to MySQL
+mydb = mysql.connector.connect(host="localhost", user="root", password="root")
+
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE TABLE Students (
+    Name VARCHAR(100) NOT NULL,
+    Age INT NOT NULL
+)")
+
+for x in mycursor:
+    print(x)</code></pre>
+    <div class="content">
+      <h3>Explanation:</h3>
+      <ol>
+        <li><strong>Connect to MySQL:</strong> Establishes a connection to the MySQL server using the provided host, username, and password.</li>
+        <li><strong>Create Cursor:</strong> A cursor is created to execute SQL commands.</li>
+        <li><strong>CREATE TABLE:</strong> This command creates a new table named <code>Students</code> with the following columns:
+          <ul>
+            <li><strong>Name:</strong> A string (up to 100 characters) that cannot be NULL.</li>
+            <li><strong>Age:</strong> An integer to store the student’s age, also cannot be NULL.</li>
+          </ul>
+        </li>
+        <li><strong>Iterate Cursor:</strong> Loops through the cursor to print the output of the query execution.</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>

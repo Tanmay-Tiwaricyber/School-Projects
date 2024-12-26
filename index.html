@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Projects</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            color: #f7e9dd;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card h2 {
+            font-size: 1.8rem;
+            color: #ffdfa0;
+            margin-bottom: 20px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .card button {
+            padding: 12px 25px;
+            background: #2a5298;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card button:hover {
+            background: #1e3c72;
+            transform: scale(1.05);
+        }
+
+        /* Developer Profile Card Styling */
+        .profile-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-card h3 {
+            font-size: 1.6rem;
+            color: #ffdfa0;
+        }
+
+        .profile-card p {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .profile-card span {
+            color: #b4bdce;
+            font-weight: bold;
+        }
+
+        /* Footer Styling */
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 20px;
+            margin-top: 40px;
+            text-align: center;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        footer a {
+            color: #ffdfa0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Python Projects</h1>
+    
+    <div class="card-container">
+        <!-- Card 1: Factorial Calculator -->
+        <div class="card">
+            <h2>Factorial Calculator</h2>
+            <p>program to calculate the factorial of the given number using for loop</p>
+            <button onclick="window.location.href='program to calculate the factorial of the given number using for loop.html'">Open Program</button>
+        </div>
+
+        <!-- Card 2: String Reversal -->
+        <div class="card">
+            <h2>Odd/Even Number</h2>
+            <p>program using functions to check whether a number is even or odd</p>
+            <button onclick="window.location.href='program using functions to check whether a number is even or odd.html'">Open Program</button>
+        </div>
+
+        <!-- Card 3: Mirror of the given string -->
+        <div class="card">
+            <h2>Mirror of Given String</h2>
+            <p>program to create a mirror of the given string</p>
+            <button onclick="window.location.href='program to create a mirror of the given string.html'">Open Program</button>
+        </div>
+
+        <!-- Card 4: check number is prime or not -->
+        <div class="card">
+            <h2>Prime Number Checker</h2>
+            <p>program to check whether a number is prime or not</p>
+            <button onclick="window.location.href='Program to check if a number is prime or not.html'">Open Program</button>
+        </div>
+        
+        <!-- card 5: print fibonacci series -->
+        <div class="card">
+            <h2>Print Fibonacci Series</h2>
+            <p>Program to print Fibonacci series up to n terms</p>
+            <button onclick="window.location.href='Program to print Fibonacci series up to n terms.html'">Open Program</button>
+        </div>
+
+        <!-- card 6: number is armstrong or not -->
+        <div class="card">
+            <h2>Armstrong Number</h2>
+            <p>Program to check if a number is an Armstrong number</p>
+            <button onclick="window.location.href='Program to check if a number is an Armstrong number.html'">Open Program</button>
+        </div>
+
+        <!-- Card 7: number of vowel in string -->
+        <div class="card">
+            <h2>Count Vowels in String</h2>
+            <p>Program to count the number of vowels in a string</p>
+            <button onclick="window.location.href='Program to count the number of vowels in a string.html'">Open Program</button>
+        </div>
+
+        <!-- Card 8: sum of digit of a number -->
+        <div class="card">
+            <h2>Sum of Digits of Number</h2>
+            <p>Program to calculate the sum of digits of a number</p>
+            <button onclick="window.location.href='Program to calculate the sum of digits of a number.html'">Open Program</button>
+        </div>
+
+        <!-- card 9: find lcm of two number -->
+        <div class="card">
+            <h2>LCM of Two Numbers</h2>
+            <p>Program to find the LCM (Least Common Multiple) of two numbersers</p>
+            <button onclick="window.location.href='Program to find the LCM (Least Common Multiple) of two numbers.html'">Open Program</button>
+        </div>
+
+        <!-- card 10: check number is palindrome -->
+        <div class="card">
+            <h2>Palindrome Number</h2>
+            <p>Program to check if a number is palindrome</p>
+            <button onclick="window.location.href='Program to check if a number is palindrome.html'">Open Program</button>
+        </div>
+
+    </div><br><br><br>
+    <h1>Python-Mysql Connectivity Programs</h1>
+    <div class="card-container">
+        <div class="card">
+            <h2>Create Database</h2>
+            <p>Program to create mysql database using python </p>
+            <button onclick="window.location.href='create_database.html'">Open Program</button>
+        </div>
+        <div class="card">
+            <h2>Create Table</h2>
+            <p>Program to create Table in database using python </p>
+            <button onclick="window.location.href='create_table.html'">Open Program</button>
+        </div>
+        <div class="card">
+            <h2>Insert Data in Table</h2>
+            <p>Program to insert data in Table using python </p>
+            <button onclick="window.location.href='insert_data_table.html'">Open Program</button>
+        </div>
+        <div class="card">
+            <h2>Fetch Data From Table</h2>
+            <p>Program to fetch data from Table using python </p>
+            <button onclick="window.location.href='fetch_data_from_table.html'">Open Program</button>
+        </div>
+        <div class="card">
+            <h2>Drop Table</h2>
+            <p>Program to Drop Table using python </p>
+            <button onclick="window.location.href='drop_table.html'">Open Program</button>
+        </div>
+    </div>
+
+        
+    
+    
+    <!-- Footer with Credits -->
+    <footer>
+        <p>Developed by <a href="https://github.com/Tanmay-Tiwaricyber" target="_blank">Tanmay Tiwari</a></p>
+    </footer>
+
+</body>
+</html>
